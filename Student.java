@@ -1,28 +1,16 @@
-import java.time.LocalDate;
-import java.time.Period;
 public class Student {
-    private String name; // Student name
-    private LocalDate dob; // Student date of birth
-    // Constructor
-    public Student(String name, String dob) {
+    private String name;
+    private int rollNumber;
+
+    public Student(String name, int rollNumber) {
         this.name = name;
-        this.dob = LocalDate.parse(dob); // Parse the date string
+        this.rollNumber = rollNumber;
     }
-    // Display student name
-    public void displayStudentName() {
-        System.out.println("Student name: " + name);
+
+    public void displayInfo() {
+        System.out.println("Student Information");
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println();
     }
-    // Display age of student
-    public void displayAge() {
-        LocalDate today = LocalDate.now(); // Get current date
-        Period age = Period.between(dob, today); // Calculate age
-        System.out.println("Student age: " + age.getYears() + " years");
-    }
-        public static void main(String[] args) {
-            // Create a student object with name and date of birth
-            Student s1 = new Student("Manan-J", "2004-02-09");
-            // Display student name and age
-            s1.displayStudentName();
-            s1.displayAge();
-        } 
 }
